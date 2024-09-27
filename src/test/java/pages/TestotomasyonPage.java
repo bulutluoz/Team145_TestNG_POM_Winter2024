@@ -33,6 +33,18 @@ public class TestotomasyonPage {
     @FindBy(xpath = "//*[@class=' heading-sm mb-4']")
     public WebElement ilkUrunIsimElementi;
 
+    @FindBy(xpath = "(//*[text()='Account'])[1]")
+    public WebElement accountLinki;
+
+    @FindBy(id = "email")
+    public WebElement emailKutusu;
+
+
+    @FindBy(id = "password")
+    public WebElement passwordKutusu;
+
+    @FindBy(id="submitlogin")
+    public WebElement signInButonu;
 
 
 }

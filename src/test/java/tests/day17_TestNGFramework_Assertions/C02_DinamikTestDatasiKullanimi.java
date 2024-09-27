@@ -4,26 +4,25 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TestotomasyonPage;
+import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class C02_DinamikTestDatasiKullanimi {
 
     @Test
     public void aramaTesti(){
 
-        /*
-
-         */
-
         // testotomasyonu sayfasina dinamik url kullanarak gidin
 
-        Driver.getDriver().get(  "https://www.testotomasyonu.com"   ); // C P' den alinacak
+        Driver.getDriver().get(  ConfigReader.getProperty("toUrl")   ); // C P' den alinacak
         // meydanci bize toUrl'i getir
 
         // arama kutusuna belirlenen aranacakKelime'yi yazip aratin
         TestotomasyonPage testotomasyonPage = new TestotomasyonPage();
 
-        testotomasyonPage.aramaKutusu.sendKeys(  "phone" + Keys.ENTER   ); // C P' den alinacak
+        testotomasyonPage.aramaKutusu
+                .sendKeys(  ConfigReader.getProperty("toAranacakKelime") + Keys.ENTER   ); // C P' den alinacak
         // meydanci bize toAranacakKelime'yi getir
 
         // arama sonucunda urun bulunabildigini test edin
@@ -40,7 +39,7 @@ public class C02_DinamikTestDatasiKullanimi {
         // acilan sayfadaki urun isminde
         // case sensitive olmadan belirlenmis aranacakKelime gectigini test edin
 
-        String aranacakKelime = "phone";  // C P' den alinacak
+        String aranacakKelime = ConfigReader.getProperty("toAranacakKelime");  // C P' den alinacak
         // meydanci bize toAranacakKelime'yi getir
 
         String actualUrunIsmi = testotomasyonPage.ilkUrunIsimElementi
@@ -48,6 +47,7 @@ public class C02_DinamikTestDatasiKullanimi {
                                                     .toLowerCase();
 
         Assert.assertTrue(actualUrunIsmi.contains(aranacakKelime));
+
 
         Driver.quitDriver();
 

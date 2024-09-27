@@ -22,6 +22,9 @@ public class ConfigReader {
             System.out.println("properties dosyasi okunamadi");
         }
     }
+    // static block calisip, Java FileInputStream sayesinde
+    // configuration.properties dosyasindaki tum Key- Value'leri alip
+    // properties objesine yukledi
 
     public static String getProperty(String key){
 
