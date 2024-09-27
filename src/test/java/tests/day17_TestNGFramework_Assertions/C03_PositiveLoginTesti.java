@@ -1,5 +1,6 @@
 package tests.day17_TestNGFramework_Assertions;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TestotomasyonPage;
 import utilities.ConfigReader;
@@ -19,14 +20,22 @@ public class C03_PositiveLoginTesti {
         testotomasyonPage.accountLinki.click();
 
         //3- Kullanici email'i olarak gecerli email girin
-
-
+        testotomasyonPage.emailKutusu.sendKeys( ConfigReader.getProperty("toGecerliEmail"));
 
         //4- Kullanici sifresi olarak gecerli password girin
+        testotomasyonPage.passwordKutusu.sendKeys(ConfigReader.getProperty("toGecerliPassword"));
+
+
         //5- Login butonuna basarak login olun
+        testotomasyonPage.signInButonu.click();
+
         //6- Basarili olarak giris yapilabildigini test edin
 
+        Assert.assertTrue( testotomasyonPage.signoutButonu.isDisplayed());
 
+        testotomasyonPage.signoutButonu.click();
+
+        Driver.quitDriver();
 
     }
 }

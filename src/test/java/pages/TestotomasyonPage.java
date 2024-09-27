@@ -46,5 +46,8 @@ public class TestotomasyonPage {
     @FindBy(id="submitlogin")
     public WebElement signInButonu;
 
+    @FindBy(xpath = "(//*[text()='Logout'])[2]")
+    public WebElement signoutButonu;
+
 
 }
