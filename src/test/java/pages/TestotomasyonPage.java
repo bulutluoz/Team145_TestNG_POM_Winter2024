@@ -30,6 +30,9 @@ public class TestotomasyonPage {
     @FindBy(className = "prod-img")
     public List<WebElement> bulunanUrunElementleriList;
 
+    @FindBy(xpath = "//*[@class=' heading-sm mb-4']")
+    public WebElement ilkUrunIsimElementi;
+
 
 
 }
