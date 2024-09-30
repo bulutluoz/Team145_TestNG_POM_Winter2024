@@ -1,2 +1,53 @@
 
 
+<!--
+    Bir sirkette belirlenen test planlari cercevesinde
+    belirli araliklarla bazi testler calistirilir
+
+    ornegin hergun ==> smoke testler
+            3 ayda bir ==> regression testleri
+            her versiyondan once ==> sistem testleri... vb
+
+    Ornegin hergun smoke test calistirmak icin
+    hangi test method'lari / class'lari veya package'larinin calismasi gerektigini
+    dusunmek istemeyiz
+
+    EGER belirli zaman dilimlerinde
+    calistiracagimiz testler varsa
+    bunlari bir kere belirleyip
+    istenen zaman dilimlerinde tekrar tekrar calistirabiliriz
+
+    smoke testlerimiz :
+        day15 ==> C01
+        day16 ==> C02, C04
+        day17 ==> C01,C03, C04
+        day18 ==> C01
+
+      belirlenen testleri toplu olarak calistirmak icin
+      .xml dosyalari kullanilir
+
+
+-->
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="smoke testleri">
+    
+    <test name="smoke test">
+        
+        <classes>
+            
+            <class name="tests.day15_testNGFramework.C01_IlkTest"></class>
+            <class name="tests.day16_TestNG_Framework.C02_PageClassKullanimi"></class>
+            <class name="tests.day16_TestNG_Framework.C04_DropdownTesti"></class>
+            <class name="tests.day17_TestNGFramework_Assertions.C01_QuitDriver"></class>
+            <class name="tests.day17_TestNGFramework_Assertions.C03_PositiveLoginTesti"></class>
+            <class name="tests.day17_TestNGFramework_Assertions.C04_NegativeLoginTesti"></class>
+            <class name="tests.day18_TestNGAssertions_xmlFiles.C01_SoftAssert"></class>
+            
+        </classes>
+        
+    </test>
+    
+</suite>
+

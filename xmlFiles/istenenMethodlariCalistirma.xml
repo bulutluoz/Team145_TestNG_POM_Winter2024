@@ -1,0 +1,49 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+        day17 package'indaki C04'de gecersizemailTesti 'ni
+
+        day15 package'indaki C02'den testotomasyonuTesti disindaki tum method'lari
+
+        calistirin
+
+        NOT : Eger bir class'daki tum test method'lari calisacaksa
+              method'lari tek tek secmeye gerek yok
+              tum class'i calistiririz
+
+              ayni sekilde bir class'da tek bir method varsa
+              method'u secmek yerine class'i calistirabiliriz
+
+              EGER bir class'da birden fazla test method'u var
+              ve bunlardan sadece bir kismi calisacak ise
+              calisacak method secimi yapiyoruz
+
+-->
+
+<suite name="istenen methodlari calistirma">
+
+    <test name="method calistirma">
+
+        <classes>
+            <class name="tests.day17_TestNGFramework_Assertions.C04_NegativeLoginTesti">
+                <methods>
+
+                    <include name="gecersizemailTesti"></include>
+
+                </methods>
+            </class>
+
+            <class name="tests.day15_testNGFramework.C02_Priority">
+                <methods>
+
+                    <exclude name="testotomasyonuTesti"></exclude>
+
+                </methods>
+            </class>
+
+        </classes>
+
+    </test>
+
+</suite>
+

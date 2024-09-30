@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- 
+        ayda bir calistirilacak package'lar
+        day15
+        day18
+-->
+
+<suite name="aylik testler">
+    
+    <test name="aylik test">
+        
+        <packages>
+            
+            <package name="tests.day15_testNGFramework"></package>
+            <package name="tests.day18_TestNGAssertions_xmlFiles"></package>
+            
+        </packages>
+        
+    </test>
+    
+</suite>
