@@ -1,27 +1,34 @@
-package tests.day17_TestNGFramework_Assertions;
+package tests.day18_TestNGAssertions_xmlFiles;
 
 import org.openqa.selenium.Keys;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.TestotomasyonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class C06_Assertions {
+public class C01_SoftAssert {
 
     @Test
-    public void aramaTesti(){
+    public void test01(){
 
-        // testotomasyonu sayfasina dinamik url kullanarak gidin
+
+        // testotomasyonu sayfasina gidin
 
         Driver.getDriver().get(  ConfigReader.getProperty("toUrl")   );
 
-        // url'in verilen url ile ayni oldugunu test edin
+        // url'in verilen url ile ayni oldugunu dogrulayin (verify)
 
         String expectedUrl = ConfigReader.getProperty("toUrl");
         String actualUrl = Driver.getDriver().getCurrentUrl();
 
-        Assert.assertEquals(actualUrl,expectedUrl);
+        SoftAssert softAssert = new SoftAssert();
+
+        softAssert.assertEquals(actualUrl, expectedUrl,"Url beklenenden farkli");
+        // softassert'un en buyuk dezavantaji
+        // hatanin oldugu satir olarak assertAll()'un bulundugu satiri vermesidir
+        // hatanin asil yerini bulabilmemiz icin
+        // softassert kullandigimiz tum assertion'larda bir hata mesaji eklemeliyiz
 
 
         // arama kutusuna belirlenen aranacakKelime'yi yazip aratin
@@ -32,7 +39,8 @@ public class C06_Assertions {
 
         // arama sonucunda urun bulunabildigini test edin
 
-        Assert.assertTrue( testotomasyonPage.bulunanUrunElementleriList.size() > 0   );
+        softAssert.assertTrue(testotomasyonPage.bulunanUrunElementleriList.size()>0
+                                        ,"aranan urun bulunamadi");
 
 
         // ilk urunu tiklayin
@@ -47,13 +55,15 @@ public class C06_Assertions {
         String aranacakKelime = ConfigReader.getProperty("toAranacakKelime");
 
         String actualUrunIsmi = testotomasyonPage.ilkUrunIsimElementi
-                                                    .getText()
-                                                    .toLowerCase();
+                                                .getText()
+                                                .toLowerCase();
 
-        Assert.assertTrue(actualUrunIsmi.contains(aranacakKelime));
 
+        softAssert.assertTrue(actualUrunIsmi.contains(aranacakKelime),
+                                    "urun ismi aranacak kelimeyi icermiyor");
+
+        softAssert.assertAll();
 
         Driver.quitDriver();
-
     }
 }
