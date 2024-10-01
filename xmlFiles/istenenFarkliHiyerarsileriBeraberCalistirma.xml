@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+        bir E2E testi icin asagidaki
+        package/class/method'lari calistirin
+
+        day15 package'inin tamami
+        day16 'dan C04 class'i
+        day18 'den C01 class'i
+        day17'den C04'deki gecersizPasswordTesti
+-->
+
+<suite name="E2E test suite'i">
+    <test name="kullanici E2E testi">
+
+        <packages>
+            <package name="tests.day15_testNGFramework"></package>
+        </packages>
+
+        <classes>
+            <class name="tests.day16_TestNG_Framework.C04_DropdownTesti"></class>
+            <class name="tests.day18_TestNGAssertions_xmlFiles.C01_SoftAssert"></class>
+            <class name="tests.day17_TestNGFramework_Assertions.C04_NegativeLoginTesti">
+                <methods>
+                    <include name="gecersizPasswordTesti"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

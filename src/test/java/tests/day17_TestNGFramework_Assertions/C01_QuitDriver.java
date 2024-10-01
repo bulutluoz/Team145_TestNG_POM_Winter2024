@@ -12,7 +12,7 @@ public class C01_QuitDriver {
     // 2- wisequarter anasayfaya gidin Url'in "wisequarter" icerdigini test edin
     // 3- youtube anasayfaya gidin Title'in "vimeo" icermedigini test edin
 
-    @Test
+    @Test(groups = "smoke")
     public void testotomasyonuTesti(){
         Driver.getDriver().get("https://www.testotomasyonu.com");
 
@@ -24,7 +24,7 @@ public class C01_QuitDriver {
         Driver.quitDriver();
     }
 
-    @Test
+    @Test(groups = {"smoke","e2e"})
     public void wisequarterTesti(){
         Driver.getDriver().get("https://www.wisequarter.com");
 
@@ -36,7 +36,7 @@ public class C01_QuitDriver {
         Driver.quitDriver();
     }
 
-    @Test
+    @Test(groups = {"smoke","sistem"})
     public void youtubeTesti(){
 
         Driver.getDriver().get("https://www.youtube.com");

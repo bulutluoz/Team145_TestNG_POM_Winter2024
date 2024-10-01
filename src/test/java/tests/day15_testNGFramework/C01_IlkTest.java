@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -40,10 +41,10 @@ public class C01_IlkTest {
 
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod()
     public void setup(){
-        WebDriverManager.firefoxdriver().setup(); // eger sirketin verdigi ozel bir WebDriver varsa
-        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup(); // eger sirketin verdigi ozel bir WebDriver varsa
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }

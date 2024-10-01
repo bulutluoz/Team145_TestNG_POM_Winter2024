@@ -9,7 +9,7 @@ import utilities.Driver;
 
 public class C01_SoftAssert {
 
-    @Test
+    @Test(groups = "smoke")
     public void test01(){
 
 

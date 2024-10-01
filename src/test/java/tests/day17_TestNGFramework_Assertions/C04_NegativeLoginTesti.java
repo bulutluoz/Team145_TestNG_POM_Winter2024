@@ -18,7 +18,7 @@ public class C04_NegativeLoginTesti {
     //5- Basarili olarak giris yapilamadigini test edin
 
     TestotomasyonPage testotomasyonPage = new TestotomasyonPage();
-    @Test
+    @Test(groups = {"smoke","sistem"})
     public void gecersizPasswordTesti(){
         //1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
@@ -36,7 +36,7 @@ public class C04_NegativeLoginTesti {
         Driver.quitDriver();
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void gecersizemailTesti(){
         //1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
@@ -54,7 +54,7 @@ public class C04_NegativeLoginTesti {
         Driver.quitDriver();
     }
 
-    @Test
+    @Test(groups = {"smoke","e2e"})
     public void gecersizEmailGecersizPasswordTesti(){
         //1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));

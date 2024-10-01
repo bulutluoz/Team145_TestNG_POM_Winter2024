@@ -9,7 +9,7 @@ import utilities.ReusableMethods;
 
 public class C02_PageClassKullanimi {
 
-    @Test
+    @Test(groups = {"smoke","e2e"})
     public void aramaTesti(){
 
         // testotomasyonu anasayfaya gidin

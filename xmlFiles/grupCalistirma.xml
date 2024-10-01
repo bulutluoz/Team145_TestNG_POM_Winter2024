@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+        Eger .xml dosyasinda
+        calisacak class veya method'lari tek tek yazmak istemezsek
+        direk test method'larinda gruplandirma yapabiliriz
+
+        gruplandirma yaptiktan sonra
+        .xml dosyasindan hangi grubu calistirmak istiyorsak tek bir komutla calistirabiliriz
+
+        grup calistirma diger .xml dosyalarindan biraz farklidir
+
+        burada hem calisacak/calismayacak gruplari belirtmemiz gerekir
+        hem de bu testlerin nerede oldugunu soylemeliyiz
+
+-->
+
+<suite name="gruplari calistirma">
+    <test name="grup calistirma testi">
+
+        <groups>
+            <run>
+                <include name="sistem"></include>
+                <include name="e2e"></include>
+            </run>
+        </groups>
+        
+        <packages>
+            <package name="tests.*"></package>
+        </packages>
+
+    </test>
+</suite>
