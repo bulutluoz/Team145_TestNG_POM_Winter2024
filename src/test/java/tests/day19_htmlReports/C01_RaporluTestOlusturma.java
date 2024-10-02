@@ -57,7 +57,7 @@ public class C01_RaporluTestOlusturma extends TestBaseRapor {
 
         //6- Basarili olarak giris yapilabildigini test edin
         ReusableMethods.bekle(1);
-        Assert.assertTrue( !testotomasyonPage.signoutButonu.isDisplayed());
+        Assert.assertTrue( testotomasyonPage.signoutButonu.isDisplayed());
         extentTest.pass("Basarili olarak giris yapilabildigini test eder");
 
         testotomasyonPage.signoutButonu.click();

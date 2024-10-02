@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Raporlu classlari calistirma">
+    <test name="Raporlu test calistirma">
+
+        <classes>
+
+            <class name="tests.day19_htmlReports.C01_RaporluTestOlusturma"></class>
+            <class name="tests.day20_htmlReports_dataProvider.C01_RaporluNegatifLoginTestleri"></class>
+        </classes>
+
+    </test>
+</suite>
