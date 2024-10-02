@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Cross Browser testler" thread-count="2" parallel="tests">
+
+    <test name="chrome ile calisacak testler">
+        <parameter name="kullanilacakBrowser" value="chrome"></parameter>
+
+        <classes>
+            <class name="tests.day20_crossBrowserTestler.C01_CrossBrowserAramaTesti"></class>
+            <class name="tests.day20_crossBrowserTestler.C02_CrossBrowserPozitifLoginTesti"></class>
+        </classes>
+
+    </test>
+
+
+
+    <test name="firefox ile calisacak testler">
+        <parameter name="kullanilacakBrowser" value="firefox"></parameter>
+
+        <classes>
+            <class name="tests.day20_crossBrowserTestler.C01_CrossBrowserAramaTesti"></class>
+            <class name="tests.day20_crossBrowserTestler.C02_CrossBrowserPozitifLoginTesti"></class>
+        </classes>
+
+    </test>
+
+</suite>
